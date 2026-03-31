@@ -1,0 +1,6 @@
+{
+  "name": "claude-md-updater",
+  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs. Syncs project documentation with codebase changes between two commits.",
+  "version": "1.0.0",
+  "contextFileName": "GEMINI.md"
+}
