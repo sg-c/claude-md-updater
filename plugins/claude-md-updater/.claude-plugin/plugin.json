@@ -1,7 +1,7 @@
 {
   "name": "claude-md-updater",
-  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs. Syncs project documentation with codebase changes between two commits.",
-  "version": "1.0.0",
+  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files. Two modes: diff-based (incremental updates from git commits) and content-based (regenerate from current codebase). Supports bottom-up processing with parallel subagents for large projects.",
+  "version": "1.1.0",
   "author": {
     "name": "sg-c",
     "url": "https://github.com/sg-c"
