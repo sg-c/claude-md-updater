@@ -1,0 +1,23 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-md-updater",
+  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs",
+  "owner": {
+    "name": "sg-c",
+    "url": "https://github.com/sg-c"
+  },
+  "plugins": [
+    {
+      "name": "claude-md-updater",
+      "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs. Syncs project documentation with codebase changes between two commits. Analyzes diffs to add, update, or remove documentation while preserving useful info and suggesting decomposition of long files.",
+      "version": "1.0.0",
+      "author": {
+        "name": "sg-c",
+        "url": "https://github.com/sg-c"
+      },
+      "source": ".",
+      "category": "productivity",
+      "homepage": "https://github.com/sg-c/claude-md-updater"
+    }
+  ]
+}
