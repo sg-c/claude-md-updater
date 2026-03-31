@@ -15,7 +15,7 @@
         "name": "sg-c",
         "url": "https://github.com/sg-c"
       },
-      "source": ".",
+      "source": "./plugins/claude-md-updater",
       "category": "productivity",
       "homepage": "https://github.com/sg-c/claude-md-updater"
     }
