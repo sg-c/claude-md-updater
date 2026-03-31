@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claude-md-updater",
-  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs",
+  "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files with diff-based or content-based analysis",
   "owner": {
     "name": "sg-c",
     "url": "https://github.com/sg-c"
@@ -9,8 +9,8 @@
   "plugins": [
     {
       "name": "claude-md-updater",
-      "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files based on git commit diffs. Syncs project documentation with codebase changes between two commits. Analyzes diffs to add, update, or remove documentation while preserving useful info and suggesting decomposition of long files.",
-      "version": "1.0.0",
+      "description": "Update CLAUDE.md, AGENTS.md, and GEMINI.md files. Two modes: (1) Diff-based - analyze git diff between commits to update incrementally; (2) Content-based - analyze current files to regenerate from scratch. Supports bottom-up processing with parallel subagents for large projects.",
+      "version": "1.1.0",
       "author": {
         "name": "sg-c",
         "url": "https://github.com/sg-c"

@@ -226,3 +226,63 @@ Is CLAUDE.md > 500 lines?
         ├── Frontend/Backend? → frontend/CLAUDE.md, backend/CLAUDE.md
         └── Feature areas? → src/*/CLAUDE.md
 ```
+
+## Content-Based Mode Decomposition
+
+When using content-based mode (regenerating from scratch), use these additional decomposition opportunities:
+
+### Detecting Decomposition Candidates
+
+During Phase 1 analysis, flag directories that need decomposition:
+
+| Signal | Action |
+|--------|--------|
+| Directory >30 code files | Consider splitting into subdirectories |
+| Multiple unrelated concerns | Create separate CLAUDE.md per concern |
+| Mixed languages (e.g., Python + JS) | Split by language if separate concerns |
+| Tests intermingled with source | Keep tests in parent, document separately |
+
+### Missing Documentation Detection
+
+Content-based mode should create missing intermediate documentation:
+
+```
+project/
+├── src/
+│   ├── auth/          → CLAUDE.md exists ✓
+│   ├── payments/      → CLAUDE.md missing! CREATE
+│   └── api/           → CLAUDE.md missing! CREATE
+└── CLAUDE.md          → Should link to all three
+```
+
+### Documentation Depth Consistency
+
+Ensure all branches have similar documentation depth:
+
+| Depth Level | Expected Files |
+|-------------|----------------|
+| Root | 1 (CLAUDE.md) |
+| Major subsystems | 1 per subsystem |
+| Leaf packages | 1 per package |
+
+**Anti-pattern**: Documentation depth varies (some branches have docs, others don't).
+
+**Good pattern**: Consistent depth across similar subsystems.
+
+### Large Directory Handling
+
+When a single directory is too large for one CLAUDE.md:
+
+1. **Identify sub-concerns**: Group related files within the directory
+2. **Recommend split**: Suggest restructuring the directory structure
+3. **Document current state**: If split not possible, document clearly with sections
+
+Example:
+```markdown
+## Directory Structure (Large - Consider Splitting)
+
+This directory contains 45 files. Consider organizing into:
+- `validators/` - Input validation logic
+- `transformers/` - Data transformation logic
+- `schemas/` - Schema definitions
+```
